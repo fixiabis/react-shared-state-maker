@@ -1,4 +1,4 @@
-# react-shared-state-hook
+# react-shared-state-maker
 
 react hook for share state between components
 
@@ -7,7 +7,7 @@ react hook for share state between components
 Make shared state hook in `useSharedState.ts` / `useSharedState.js`:
 
 ```javascript
-import { makeSharedState } from 'react-shared-state-hook';
+import { makeSharedState } from 'react-shared-state-maker';
 
 const useSharedState = makeSharedState('');
 
