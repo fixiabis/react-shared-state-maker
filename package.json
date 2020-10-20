@@ -1,0 +1,34 @@
+{
+  "name": "react-shared-state-hook",
+  "version": "1.0.0",
+  "description": "react hook for share state between components",
+  "main": "index.js",
+  "scripts": {
+    "start": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fixiabis/react-shared-state-hook.git"
+  },
+  "keywords": [
+    "react-hooks",
+    "shared state"
+  ],
+  "author": "fixiabis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fixiabis/react-shared-state-hook/issues"
+  },
+  "homepage": "https://github.com/fixiabis/react-shared-state-hook#readme",
+  "devDependencies": {
+    "@types/react": "^16.9.53",
+    "rollup": "^1.31.0",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "react": "^16.14.0",
+    "rxjs": "^6.6.3"
+  }
+}
