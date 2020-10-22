@@ -1,8 +1,8 @@
 # react-shared-state-maker
 
-react hook for share state between components
+react hook for share state between the components without context api.
 
-# Example: make shared state between components
+# Example: make shared state between the components
 
 Make shared state hook in `useSharedState.ts` / `useSharedState.js`:
 
@@ -17,6 +17,7 @@ export default useSharedState;
 Put in `ComponentA.tsx` / `ComponentA.js`:
 
 ```jsx
+import React from 'react';
 import useSharedState from './useSharedState';
 
 const ComponentA = () => {
@@ -36,6 +37,7 @@ export default ComponentA;
 And put in `ComponentB.tsx` / `ComponentB.js`:
 
 ```jsx
+import React from 'react';
 import useSharedState from './useSharedState';
 
 const ComponentB = () => {
