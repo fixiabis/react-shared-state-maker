@@ -10,7 +10,7 @@ const makeSharedState = <State>(initialState: State) => {
 
     useEffect(() => {
       const subscriber = sharedState.subscribe(setState);
-      return () => subscriber.unsubscribe();
+      return subscriber.unsubscribe.bind(subscriber);
     }, []);
 
     return [state, setSharedState] as [State, typeof setSharedState];
