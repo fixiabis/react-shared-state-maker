@@ -1,6 +1,6 @@
 {
   "name": "react-shared-state-maker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react hook for share state between components",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,11 @@
     "url": "git+https://github.com/fixiabis/react-shared-state-maker.git"
   },
   "keywords": [
+    "react",
+    "typescript",
     "react-hooks",
-    "shared state"
+    "state-share",
+    "shared-state"
   ],
   "author": "fixiabis",
   "license": "MIT",
