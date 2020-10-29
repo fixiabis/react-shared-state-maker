@@ -1,6 +1,6 @@
 # react-shared-state-maker
 
-react hook for share state between the components without context api.
+react hook for share state between the components without use context api.
 
 # Example: make shared state between the components
 
@@ -58,8 +58,8 @@ Now, put ComponentA and ComponentB in `App.tsx` / `App.js`, let's all!
 
 ```jsx
 import React from 'react';
-import ComponentA from './componentA';
-import ComponentB from './componentB';
+import ComponentA from './ComponentA';
+import ComponentB from './ComponentB';
 
 const App = () => {
   return (
