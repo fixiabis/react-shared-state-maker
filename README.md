@@ -84,7 +84,7 @@ import ComponentB from './ComponentB';
 import useSharedState from './useSharedState';
 
 const App = () => {
-  const [, setValue] = useSharedState.current; // non-hooked state and dispatcher
+  const [, setValue] = useSharedState.current; // not hooked state and dispatcher
   const clearContent = () => setValue(''); // No re-render on App
 
   return (
