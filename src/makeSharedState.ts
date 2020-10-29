@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Subject } from 'rxjs';
 
-const makeSharedState = <State>(initialStateOrInitializer: State | (() => State)) => {
+type Initializer<State> = () => State;
+type Updater<State> = (prevState: State) => State;
+
+const makeSharedState = <State>(initialStateOrInitializer: State | Initializer<State>) => {
   const sharedStateSubject = new Subject<State>();
 
-  let sharedState: State = typeof initialStateOrInitializer === 'function'
-    ? (initialStateOrInitializer as () => State)()
+  let sharedState = typeof initialStateOrInitializer === 'function'
+    ? (initialStateOrInitializer as Initializer<State>)()
     : initialStateOrInitializer;
 
-  const setSharedState = (stateOrUpdater: State | ((prevState: State) => State)) => {
+  const setSharedState = (stateOrUpdater: State | Updater<State>) => {
     const state = typeof stateOrUpdater === 'function'
-      ? (stateOrUpdater as (prevState: State) => State)(sharedState)
+      ? (stateOrUpdater as Updater<State>)(sharedState)
       : stateOrUpdater;
 
     sharedStateSubject.next(sharedState = state);
