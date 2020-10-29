@@ -20,7 +20,7 @@ const makeSharedState = <State>(
         ? (stateOrUpdater as Updater<State>)(sharedState)
         : stateOrUpdater;
 
-    sharedStateSubject.next((sharedState = state));
+    sharedStateSubject.next((sharedState = sharedStateRef[0] = state));
   };
 
   const useSharedState = () => {
@@ -33,6 +33,13 @@ const makeSharedState = <State>(
 
     return [state, setSharedState] as [State, typeof setSharedState];
   };
+
+  const sharedStateRef = [sharedState, setSharedState] as [
+    State,
+    typeof setSharedState
+  ];
+
+  useSharedState.current = sharedStateRef;
 
   return useSharedState;
 };
