@@ -72,3 +72,29 @@ const App = () => {
 
 export default App;
 ```
+
+# Example: set shared state without use hook
+
+Refer to [previous section](#example-make-shared-state-between-the-components), ComponentA, ComponentB and useSharedState are prepared.
+
+```jsx
+import React from 'react';
+import ComponentA from './ComponentA';
+import ComponentB from './ComponentB';
+import useSharedState from './useSharedState';
+
+const App = () => {
+  const [, setValue] = useSharedState.current; // non-hooked state and dispatcher
+  const clearContent = () => setValue(''); // No re-render on App
+
+  return (
+    <>
+      <ComponentA />
+      <ComponentB />
+      <input type="button" value="clear" onClick={clearContent}>
+    </>
+  );
+};
+
+export default App;
+```
