@@ -4,19 +4,23 @@ import { Subject } from 'rxjs';
 type Initializer<State> = () => State;
 type Updater<State> = (prevState: State) => State;
 
-const makeSharedState = <State>(initialStateOrInitializer: State | Initializer<State>) => {
+const makeSharedState = <State>(
+  initialStateOrInitializer: State | Initializer<State>
+) => {
   const sharedStateSubject = new Subject<State>();
 
-  let sharedState = typeof initialStateOrInitializer === 'function'
-    ? (initialStateOrInitializer as Initializer<State>)()
-    : initialStateOrInitializer;
+  let sharedState =
+    typeof initialStateOrInitializer === 'function'
+      ? (initialStateOrInitializer as Initializer<State>)()
+      : initialStateOrInitializer;
 
   const setSharedState = (stateOrUpdater: State | Updater<State>) => {
-    const state = typeof stateOrUpdater === 'function'
-      ? (stateOrUpdater as Updater<State>)(sharedState)
-      : stateOrUpdater;
+    const state =
+      typeof stateOrUpdater === 'function'
+        ? (stateOrUpdater as Updater<State>)(sharedState)
+        : stateOrUpdater;
 
-    sharedStateSubject.next(sharedState = state);
+    sharedStateSubject.next((sharedState = state));
   };
 
   const useSharedState = () => {
