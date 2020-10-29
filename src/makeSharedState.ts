@@ -15,12 +15,12 @@ const makeSharedState = <State>(
       : initialStateOrInitializer;
 
   const setSharedState = (stateOrUpdater: State | Updater<State>) => {
-    const state =
+    sharedState = sharedStateRef[0] =
       typeof stateOrUpdater === 'function'
         ? (stateOrUpdater as Updater<State>)(sharedState)
         : stateOrUpdater;
 
-    sharedStateSubject.next((sharedState = sharedStateRef[0] = state));
+    sharedStateSubject.next(sharedState);
   };
 
   const useSharedState = () => {
