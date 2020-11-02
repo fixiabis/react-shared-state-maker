@@ -1,6 +1,6 @@
 {
   "name": "react-shared-state-maker",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "react hook for share state between components without context api",
   "main": "lib/index.js",
   "scripts": {
