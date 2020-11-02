@@ -73,7 +73,7 @@ const App = () => {
 export default App;
 ```
 
-# Example: set shared state without use hook
+# Example: set shared state out of component
 
 Refer to [previous section](#example-make-shared-state-between-the-components), ComponentA, ComponentB and useSharedState are prepared.
 
@@ -83,10 +83,10 @@ import ComponentA from './ComponentA';
 import ComponentB from './ComponentB';
 import useSharedState from './useSharedState';
 
-const App = () => {
-  const [, setValue] = useSharedState.current; // not hooked state and dispatcher
-  const clearContent = () => setValue(''); // No re-render on App
+const [, setValue] = useSharedState.current;
+const clearContent = () => setValue(''); // will re-render only components of shared state
 
+const App = () => {
   return (
     <>
       <ComponentA />
