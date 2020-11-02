@@ -1,6 +1,6 @@
 {
   "name": "react-shared-state-maker",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "react hook for share state between components without context api",
   "main": "lib/index.js",
   "scripts": {
@@ -28,9 +28,7 @@
     "@types/react": "^16.9.53",
     "rollup": "^1.31.0",
     "rollup-plugin-typescript2": "^0.25.3",
-    "typescript": "^3.7.5"
-  },
-  "dependencies": {
+    "typescript": "^3.7.5",
     "react": "^16.14.0",
     "rxjs": "^6.6.3"
   }
