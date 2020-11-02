@@ -2,7 +2,7 @@
   "name": "react-shared-state-maker",
   "version": "1.1.1",
   "description": "react hook for share state between components without context api",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
