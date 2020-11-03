@@ -4,7 +4,7 @@ react hook for share state between the components without use context api.
 
 # Attention
 
-The stable version is 1.3.x, earlier versions are not available.
+The stable version is 1.3.x, earlier versions may not work properly.
 
 # Example: make shared state between the components
 
