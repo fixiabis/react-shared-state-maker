@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 
 type Initializer<State> = () => State;
 type Updater<State> = (prevState: State) => State;
+type Setter<State> = (stateOrUpdater: State | Updater<State>) => void;
 
 const makeSharedState = <State>(
   initialStateOrInitializer: State | Initializer<State>
@@ -31,12 +32,12 @@ const makeSharedState = <State>(
       return subscriber.unsubscribe.bind(subscriber);
     }, []);
 
-    return [state, setSharedState] as [State, typeof setSharedState];
+    return [state, setSharedState] as [State, Setter<State>];
   };
 
   const sharedStateRef = [sharedState, setSharedState] as [
     State,
-    typeof setSharedState
+    Setter<State>
   ];
 
   useSharedState.current = sharedStateRef;
